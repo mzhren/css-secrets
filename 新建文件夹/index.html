@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>运动文字效果</title>
+    <style>
+    @keyframes noflex {
+        from, 50% { flex: 1; }
+        to { flex: 0; }
+    }
+
+	#line-headings h1,
+	#line-headings span {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		box-sizing: border-box;
+		text-transform: uppercase;
+		padding: 0;
+		background: none;
+		color: black;
+		margin: 0;
+	}
+
+	#line-headings span {
+		font-size: 800%;
+		line-height: 1;
+		font-weight: 100;
+		color: hsl(330, 100%, 30%);
+		letter-spacing: -.1em;
+	}
+
+    #line-headings h1::before,
+    #line-headings h1::after,
+    #line-headings span::before,
+    #line-headings span::after {
+        content: "";
+        background: currentColor;
+        height: .1em;
+        flex: 1;
+        margin: 0 .2em;
+        animation: noflex 3s 0s ease-in-out infinite alternate;
+    }
+
+    #line-headings span::before,
+    #line-headings span::after {
+        --stripe: 3px;
+        height: .3em;
+        background: repeating-linear-gradient(-45deg, currentColor 0 -3px, transparent 0 calc(2*-3px));
+    }
+
+    #line-headings h1::before,
+    #line-headings span::before {
+        margin-left: 0;
+    }
+
+    #line-headings h1::after {
+        margin-right: 0;
+        animation-delay: 1.5s;
+    }
+
+    #line-headings span::before {
+        animation-delay: .5s;
+        margin-right: 0;
+    }
+
+    #line-headings span::after {
+        animation-delay: 2s;
+    }
+    </style>
+</head>
+<body>
+    <section class="secret mv-target-within">
+        <header class="slide mv-target-within" id="line-headings">
+            <span>4</span>
+            <h1>Line Headings</h1>
+        </header>
+    </section>
+</body>
+</html>

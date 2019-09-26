@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>信封效果</title>
+    <style>
+        div {
+            width: 14em;
+            height: 8em;
+            margin: 1em auto;
+            line-height: 8;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #0aa;
+        }
+
+        .background {
+            padding: 1em;
+            border: 1em solid transparent;
+            background: linear-gradient(white, white) padding-box,
+                repeating-linear-gradient(-45deg,
+                    red 0, red 12.5%,
+                    transparent 0, transparent 25%,
+                    #58a 0, #58a 37.5%,
+                    transparent 0, transparent 50%) 0 / 5em 5em;
+        }
+
+        .border-image {
+            padding: 1em;
+            border: 16px solid transparent;
+            border-image: 16 repeating-linear-gradient(-45deg,
+                    red 0, red 1em,
+                    transparent 0, transparent 2em,
+                    #58a 0, #58a 3em,
+                    transparent 0, transparent 4em);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">背景实现</div>
+    <div class="border-image">边框实现</div>
+</body>
+
+</html>

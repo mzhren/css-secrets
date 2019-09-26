@@ -5,91 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CSS 特效演示网站</title>
-    <style>
-    body{
-        background-color: deepskyblue;
-    }
-    h1{
-        text-align: center;
-        font-family: Arial, Helvetica, sans-serif;
-        color:#fff;
-    }
-    .container{
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-content: space-between;
-        padding: 10px;
-    }
-    .demo{
-        min-width:360px;
-        min-height: 280px;
-        background-color:rgba(174, 161, 206, 0.5);
-        border-radius: 10px;
-        flex-grow: 1;
-        margin: 10px;
-        padding: 10px;
-        box-sizing: border-box;
-    }
-    .demo img{
-        width: 100%;
-    }
-
-    h2{
-        text-align: center;
-        color: #fff;
-        font-size: 120%;
-    }
-    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <h1>
         CSS 特效演示列表
     </h1>
-    <div class="container">
-        <div class="demo">
-            <img src="images/default-demo-cover.jpg" alt="">
+    <div class="container" id="app">
+        <div v-for="demo in demos" class="demo">
+            <img :src="demo.dir + '/' + demo.thumb" alt="">
             <h2>
-                500px 网站加载按钮
+                <a :href="demo.dir" class="href"> {{demo.title}}</a>
             </h2>
         </div>
 
-        <div class="demo">
-            <img src="" alt="">
-            <h2>
         
-            </h2>
-        </div>
-
-        <div class="demo">
-            <img src="" alt="">
-            <h2>
-                Google Doodle 按钮
-            </h2>
-        </div>
-
-        <div class="demo">
-            <img src="" alt="">
-            <h2>
-                500px 网站加载按钮
-            </h2>
-        </div>
-        
-        <div class="demo">
-            <img src="" alt="">
-            <h2>
-        
-            </h2>
-        </div>
-        
-        <div class="demo">
-            <img src="" alt="">
-            <h2>
-                Google Doodle 按钮
-            </h2>
-        </div>
     </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
