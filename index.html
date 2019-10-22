@@ -19,11 +19,12 @@
             <h2>
                 <a :href="demo.dir" class="href"> {{demo.title}}</a>
             </h2>
+            <div class="tags">
+                <span v-for="tag in demo.tags" class="tag">{{ tag }}</span>
+            </div>
         </div>
-
         
     </div>
-
     <script src="app.js"></script>
 </body>
 </html>
