@@ -51,6 +51,26 @@ var app = new Vue({
                 thumb: 'vetical-stripes.png',
                 title: '垂直条纹背景',
                 tags: ['background-size', 'linear-gradient']
+            }, {
+                dir: 'diagonal-stripes',
+                thumb: 'diagonal-stripes.png',
+                title: '斜向条纹背景',
+                tags: ['background-size', 'linear-gradient']
+            }, {
+                dir: 'diagonal-stripes-60deg',
+                thumb: '../diagonal-stripes/diagonal-stripes.png',
+                title: '斜向条纹背景2 60度',
+                tags: ['background-size', 'repeating-linear-gradient']
+            }, {
+                dir: 'subtle-stripes',
+                thumb: 'subtle-stripes.png',
+                title: '灵活的同色系条纹',
+                tags: ['background-size', 'repeating-linear-gradient','hlsa','rgba']
+            }, {
+                dir: 'blueprint',
+                thumb: 'blueprint.png',
+                title: '复杂的背景图案-网格',
+                tags: ['background-size', 'linear-gradient', 'hlsa', 'rgba']
             }]
     }
 })
