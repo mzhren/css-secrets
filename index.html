@@ -10,9 +10,15 @@
     
 </head>
 <body>
-    <h1>
-        CSS 特效演示列表
-    </h1>
+    <header>
+        <h1>
+            CSS 特效演示列表
+        </h1>
+        <nav>
+            <a href="about.html">关于</a>
+        </nav>
+    </header>
+ 
     <div class="container" id="app">
         <div v-for="demo in demos" class="demo">
             <img :src="demo.dir + '/' + demo.thumb" alt="">
