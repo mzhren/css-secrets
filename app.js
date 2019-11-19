@@ -2,6 +2,11 @@ var app = new Vue({
     el: '#app',
     data: {
         demos: [{
+            dir: 'bubbles',
+            thumb: 'bubbles.gif',
+            title: '小米垃圾清理效果',
+            tags: ['transform', 'translate', 'rotate']
+        },{
             dir: 'translucent-borders',
             thumb: 'translucent-borders.png',
             title: '半透明边框',

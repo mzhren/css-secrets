@@ -21,7 +21,9 @@
  
     <div class="container" id="app">
         <div v-for="demo in demos" class="demo">
-            <img :src="demo.dir + '/' + demo.thumb" alt="">
+            <div class="thumb">
+                <img :src="demo.dir + '/' + demo.thumb" alt="">
+            </div>
             <h2>
                 <a :href="demo.dir" class="href"> {{demo.title}}</a>
             </h2>
