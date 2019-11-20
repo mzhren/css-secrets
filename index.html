@@ -7,15 +7,14 @@
     <title>CSS 特效演示网站</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="style.css">
-    
 </head>
 <body>
     <header>
         <h1>
             CSS 特效演示列表
         </h1>
-        <nav>
-            <a href="about.html">关于</a>
+        <nav class="container">
+            <a href="index.html">首页</a><a href="about.html">关于</a>
         </nav>
     </header>
  
@@ -33,7 +32,7 @@
                 </div>
             </div>
         </div>
-        <na>
+        <nav>
             <ul class="pagination">
                 <li class="page-item">
                     <button type="button" class="page-link" v-if="page != 1" @click="page--"> Previous </button>
@@ -52,5 +51,16 @@
 
    
     <script src="app.js"></script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?c702cb3d8417de8d394d72ec3348d515";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
 </body>
 </html>

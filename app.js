@@ -2,7 +2,7 @@ var app = new Vue({
     el: '#app',
     data: {
         page:1,
-        perPage:3,
+        perPage:12,
         pages:[],
         demos: [{
             dir: 'bubbles',
@@ -79,6 +79,31 @@ var app = new Vue({
                 thumb: 'blueprint.png',
                 title: '复杂的背景图案-网格',
                 tags: ['background-size', 'linear-gradient', 'hlsa', 'rgba']
+            }, {
+                dir: 'polka',
+                thumb: 'polka.png',
+                title: '复杂的背景图案-波点',
+                tags: ['background-size', 'radial-gradient', 'hlsa', 'rgba']
+            }, {
+                dir: 'checkerboard',
+                thumb: 'checkerboard.png',
+                title: '复杂的背景图案-棋盘',
+                tags: ['background-size', 'linear-gradient', 'hlsa', 'rgba']
+            }, {
+                dir: 'checkerboard_svg',
+                thumb: '../checkerboard/checkerboard.png',
+                title: '复杂的背景图案-棋盘svg实现',
+                tags: ['background-size', 'svg']
+            }, {
+                dir: 'limegreen',
+                thumb: 'limegreen.png',
+                title: '复杂的背景图案-绿色草地',
+                tags: ['background', 'repeating-linear-gradient']
+            },{
+                dir: 'conicbg',
+                thumb: 'conic.png',
+                title: '复杂的背景图案-圆锥',
+                tags: ['background', 'repeating-linear-gradient']
             }]
     },
     methods: {

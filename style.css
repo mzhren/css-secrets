@@ -3,13 +3,17 @@ body {
 }
 
 nav {
-    display: flex;
-    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 nav a {
-    flex: 1;
-    text-align: center;
+    border: 1px solid whitesmoke;
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: 10px;
+    width: 100px;
+    color: white;
 }
 
 h1 {
@@ -20,7 +24,7 @@ h1 {
 
 .container {
     max-width: 1400px;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
 .demos {
@@ -75,4 +79,19 @@ h2 {
     padding: 5px;
     background-color: aquamarine;
     border-radius: 5px;
+}
+
+.pagination {
+    width:300px;
+    height: 100px;
+    display: flex;
+    margin: auto;
+    align-content: center;
+}
+
+.pagination li {
+    list-style: none;
+    font-size: 24px;
+    line-height: 36px;
+    flex:1;
 }
