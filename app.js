@@ -1,6 +1,9 @@
 var app = new Vue({
     el: '#app',
     data: {
+        page:1,
+        perPage:3,
+        pages:[],
         demos: [{
             dir: 'bubbles',
             thumb: 'bubbles.gif',
@@ -77,5 +80,28 @@ var app = new Vue({
                 title: '复杂的背景图案-网格',
                 tags: ['background-size', 'linear-gradient', 'hlsa', 'rgba']
             }]
+    },
+    methods: {
+        setPages() {
+            let numberOfPages = Math.ceil(this.demos.length / this.perPage);
+            for (let index = 1; index <= numberOfPages; index++) {
+                this.pages.push(index);
+            }
+        },
+        paginate(demos) {
+            let page = this.page;
+            let perPage = this.perPage;
+            let from = (page * perPage) - perPage;
+            let to = (page * perPage);
+            return demos.slice(from, to);
+        }
+    },
+    computed: {
+        displayedDemos() {
+            return this.paginate(this.demos);
+        }
+    },
+    created(){
+        this.setPages()
     }
 })

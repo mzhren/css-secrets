@@ -20,19 +20,37 @@
     </header>
  
     <div class="container" id="app">
-        <div v-for="demo in demos" class="demo">
-            <div class="thumb">
-                <img :src="demo.dir + '/' + demo.thumb" alt="">
-            </div>
-            <h2>
-                <a :href="demo.dir" class="href"> {{demo.title}}</a>
-            </h2>
-            <div class="tags">
-                <span v-for="tag in demo.tags" class="tag">{{ tag }}</span>
+        <div class="demos">
+            <div v-for="demo in displayedDemos" class="demo">
+                <div class="thumb">
+                    <img :src="demo.dir + '/' + demo.thumb" alt="">
+                </div>
+                <h2>
+                    <a :href="demo.dir" class="href"> {{demo.title}}</a>
+                </h2>
+                <div class="tags">
+                    <span v-for="tag in demo.tags" class="tag">{{ tag }}</span>
+                </div>
             </div>
         </div>
+        <na>
+            <ul class="pagination">
+                <li class="page-item">
+                    <button type="button" class="page-link" v-if="page != 1" @click="page--"> Previous </button>
+                </li>
+                <li class="page-item">
+                    <button type="button" class="page-link" v-for="pageNumber in pages.slice(page-1, page+5)"
+                        @click="page = pageNumber"> {{pageNumber}} </button>
+                </li>
+                <li class="page-item">
+                    <button type="button" @click="page++" v-if="page < pages.length" class="page-link"> Next </button>
+                </li>
+            </ul>
+        </nav>
         
     </div>
+
+   
     <script src="app.js"></script>
 </body>
 </html>

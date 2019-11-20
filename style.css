@@ -2,12 +2,12 @@ body {
     background-color: deepskyblue;
 }
 
-nav{
+nav {
     display: flex;
     align-items: center;
 }
 
-nav a{
+nav a {
     flex: 1;
     text-align: center;
 }
@@ -21,6 +21,9 @@ h1 {
 .container {
     max-width: 1400px;
     margin: 0 auto;
+}
+
+.demos {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
