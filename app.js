@@ -5,6 +5,11 @@ var app = new Vue({
         perPage:12,
         pages:[],
         demos: [{
+            dir: 'cianimation',
+            thumb: 'cianimation.gif',
+            title: 'cianimation',
+            tags: ['animation','keyframe','transform', 'rotate']
+        },{
             dir: 'bubbles',
             thumb: 'bubbles.gif',
             title: '小米垃圾清理效果',
@@ -104,6 +109,21 @@ var app = new Vue({
                 thumb: 'conic.png',
                 title: '复杂的背景图案-圆锥',
                 tags: ['background', 'repeating-linear-gradient']
+            },{
+                dir: 'pseudorandom-stripes',
+                thumb: 'pseudorandom-stripes.png',
+                title: '复杂的背景图案-伪随机',
+                tags: ['background', 'linear-gradient','hsl']
+            }, {
+                dir: 'continuous-image-borders',
+                thumb: 'continuous-image-borders.png',
+                title: '连续的图片边框',
+                tags: ['background', 'linear-gradient']
+            }, {
+                dir: 'border-image',
+                thumb: 'border-image.png',
+                title: '边框图片',
+                tags: ['border-image', 'svg']
             }]
     },
     methods: {
