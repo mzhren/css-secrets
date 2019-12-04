@@ -5,6 +5,16 @@ var app = new Vue({
         perPage:12,
         pages:[],
         demos: [{
+            dir: 'footnote',
+            thumb: 'footnote.png',
+            title: '脚注效果',
+            tags: ['border-image', 'linear-gradient','background']
+        },{
+            dir: 'marching-ants',
+            thumb: 'marching-ants.gif',
+            title: '蚂蚁行军效果',
+            tags: ['linear-gradient','background-origin', 'padding-box','background-position']
+        },{
             dir: 'cianimation',
             thumb: 'cianimation.gif',
             title: 'cianimation',
