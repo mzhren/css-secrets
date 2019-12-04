@@ -5,6 +5,31 @@ var app = new Vue({
         perPage:12,
         pages:[],
         demos: [{
+            dir: 'parallelograms-pseudoel',
+            thumb: 'parallelograms.png',
+            title: '平行四边形效果-伪类实现',
+            tags: ['transform', 'skewX',':before']
+        },{
+            dir: 'parallelograms',
+            thumb: 'parallelograms.png',
+            title: '平行四边形效果',
+            tags: ['transform','skewX']
+        },{
+            dir: 'quarter-ellipse',
+            thumb: 'quarter-ellipse.png',
+            title: '自适应的1/4椭圆效果',
+            tags: ['border-radius']
+        },{
+            dir: 'flexible-half-ellipse',
+            thumb: 'flexible-half-ellipse.png',
+            title: '自适应的半椭圆效果',
+            tags: ['border-radius']
+        },{
+            dir: 'flexible-ellipse',
+            thumb: 'flexible-ellipse.png',
+            title: '自适应的椭圆效果',
+            tags: ['border-radius']
+        },{
             dir: 'footnote',
             thumb: 'footnote.png',
             title: '脚注效果',
