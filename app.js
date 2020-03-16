@@ -5,6 +5,11 @@ var app = new Vue({
         perPage:12,
         pages:[],
         demos: [{
+            dir: 'compound-pendulum',
+            thumb: 'compound-pendulum.gif',
+            title: 'CSS制作牛顿摆',
+            tags: ['animation', 'keyframe', 'transform', 'rotate']
+        },{
             dir: 'cianimation',
             thumb: 'cianimation.gif',
             title: 'cianimation',
