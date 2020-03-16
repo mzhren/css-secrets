@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>小米手机垃圾清理气泡效果</title>
-    
     <style>
-    .balls{
+    /* 
+    1. 画一个手机
+     */
+    .phone{
         position: relative;
         width:400px;
         height: 600px;
@@ -16,7 +18,44 @@
         overflow: hidden;
     }
 
-    @keyframes bubbles {
+    /* 
+    2. 圆球包含块，让其区中
+     */
+    .ball{
+        position: absolute;
+        width:100px;
+        height: 100px;
+        top:calc((100% - 100px)/2);
+        left:calc((100% - 100px)/2)
+    }
+
+    /* 
+    3 圆球
+      设置border-radius：50%，成为圆形
+      透明度  opacity: 0;  避免晚执行动画的圆出现的bug
+     */
+    .ball b{
+        display: block;
+        width:100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color:red;
+<<<<<<< HEAD
+        background:linear-gradient( 315deg, rgb(0, 85, 221), rgb(0, 119, 255), rgb(0, 119, 255));
+        animation: 3s bubbles infinite;
+=======
+        animation: 2s collect infinite;
+>>>>>>> 46fc2c2363803fc0bd60a8dc047efa576cc39def
+        opacity: 0;
+        animation-direction: reverse;
+    }
+
+    /* 
+    4 为圆球添加动画 垃圾收集效果
+      初始状态为：大小不缩放，y轴偏移600px
+      结束状态为：大小缩放到0.1,y轴无偏移，回到原点
+     */
+    @keyframes collect {
         from {
             transform: scale(1) translate(0,600px);
             opacity: 1;
@@ -27,29 +66,10 @@
             opacity: 0;
         }
     }
-    .ball{
-        position: absolute;
-        width:100px;
-        height: 100px;
-        top:calc((100% - 100px)/2);
-        left:calc((100% - 100px)/2)
-    }
 
-    .ball b{
-        display: block;
-        width:100px;
-        height: 100px;
-        border-radius: 50%;
-        background-color:red;
-        background:linear-gradient( 315deg, rgb(0, 85, 221), rgb(0, 119, 255), rgb(0, 119, 255));
-        animation: 3s bubbles infinite;
-        opacity: 0;
-        animation-direction: reverse;
-    }
-
-    .b1{
-
-    }
+    /* 
+    4 为圆球包含块添加变形旋转角度效果，这样里面的圆球就可以从不同角度回到原点
+     */
 
     .b2{
         transform: rotate(15deg);
@@ -68,49 +88,34 @@
         
     }
 
-
+    /* 
+    5 为圆球添加动画延时执行
+    */
     .b1 b{
         animation-delay: 1s;
-
     }
 
     .b2 b{
         animation-delay: 0.2s;
-
     }
-
-
     .b3 b{
         animation-delay: 2.9s;
-
     }
-
-
     .b3 b{
         animation-delay: 1.5s;
-
     }
-
      .b4 b{
         animation-delay: 0.7s;
-
     }
 
      .b5 b{
         animation-delay: 2.5s;
     }
-
-    
-
-    
-
-    
-    
     </style>
 </head>
 <body>
-    <div class="balls">
-
+    <div class="phone">
+        我是一个手机，完美。
         <div class="ball b1">
             <b></b>
         </div>
@@ -135,21 +140,22 @@
     </div>
 
     <script>
-        var container = document.querySelector('.balls');
+        var phone = document.querySelector('.phone');
         var ball_str = "";
+        // 用脚本添加30个圆球
         for (let i = 0; i < 30; i++) {
-            var deg = 480 * Math.random();
+            // 为每个圆球设置随机旋转角度
+            var deg = 270 * Math.random();
+            // 为每个圆球设置动画延时
             var delay = Math.random() * 5 ;
-            var class_name = 'b' + i; 
-            ball_str += `<div class="ball ${class_name}" style="transform:rotate(${deg}deg)">
+            // 拼接字符串
+            ball_str += `<div class="ball" style="transform:rotate(${deg}deg)">
                             <b style="animation-delay:${delay}s"></b>
                     </div >`;
         }
-        console.log(ball_str);
-        container.innerHTML += ball_str;
-        // container.insertAdjacentHTML('beforeend', ball_str);
 
-    
+        // 将拼接好的字符串插入到DOM结构中，转化成DOM元素
+        phone.insertAdjacentHTML('beforeend', ball_str);
     </script>
 </body>
 </html>

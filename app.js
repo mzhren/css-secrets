@@ -1,25 +1,61 @@
 var app = new Vue({
     el: '#app',
     data: {
-        page:1,
-        perPage:12,
-        pages:[],
-        demos: [{
+        page: 1,
+        perPage: 12,
+        pages: [],
+        demos: [
+            {
+                dir: 'bubbles',
+                thumb: 'bubbles.gif',
+                title: '小米垃圾清理效果',
+                tags: ['transform', 'translate', 'rotate']
+            },{
             dir: 'compound-pendulum',
             thumb: 'compound-pendulum.gif',
             title: 'CSS制作牛顿摆',
             tags: ['animation', 'keyframe', 'transform', 'rotate']
-        },{
+        }, {
+            dir: 'parallelograms-pseudoel',
+            thumb: 'parallelograms.png',
+            title: '平行四边形效果-伪类实现',
+            tags: ['transform', 'skewX', ':before']
+        }, {
+            dir: 'parallelograms',
+            thumb: 'parallelograms.png',
+            title: '平行四边形效果',
+            tags: ['transform', 'skewX']
+        }, {
+            dir: 'quarter-ellipse',
+            thumb: 'quarter-ellipse.png',
+            title: '自适应的1/4椭圆效果',
+            tags: ['border-radius']
+        }, {
+            dir: 'flexible-half-ellipse',
+            thumb: 'flexible-half-ellipse.png',
+            title: '自适应的半椭圆效果',
+            tags: ['border-radius']
+        }, {
+            dir: 'flexible-ellipse',
+            thumb: 'flexible-ellipse.png',
+            title: '自适应的椭圆效果',
+            tags: ['border-radius']
+        }, {
+            dir: 'footnote',
+            thumb: 'footnote.png',
+            title: '脚注效果',
+            tags: ['border-image', 'linear-gradient', 'background']
+        }, {
+            dir: 'marching-ants',
+            thumb: 'marching-ants.gif',
+            title: '蚂蚁行军效果',
+            tags: ['linear-gradient', 'background-origin', 'padding-box', 'background-position']
+        }, {
             dir: 'cianimation',
             thumb: 'cianimation.gif',
             title: 'cianimation',
-            tags: ['animation','keyframe','transform', 'rotate']
-        },{
-            dir: 'bubbles',
-            thumb: 'bubbles.gif',
-            title: '小米垃圾清理效果',
-            tags: ['transform', 'translate', 'rotate']
-        },{
+            tags: ['animation', 'keyframe', 'transform', 'rotate']
+        },  {
             dir: 'translucent-borders',
             thumb: 'translucent-borders.png',
             title: '半透明边框',
@@ -54,82 +90,82 @@ var app = new Vue({
             thumb: '../bg-position/bg-pos.png',
             title: '灵活的背景定位3',
             tags: ['background-position', 'calc']
-            }, {
-                dir: 'inner-rounding',
-                thumb: 'inner-rounding.png',
-                title: '边框内圆角',
-                tags: ['outline', 'box-shadow']
-            }, {
-                dir: 'horizontal-stripes',
-                thumb: 'horizontal-stripes.png',
-                title: '水平条纹背景',
-                tags: ['background-size', 'linear-gradient']
-            }, {
-                dir: 'vetical-stripes',
-                thumb: 'vetical-stripes.png',
-                title: '垂直条纹背景',
-                tags: ['background-size', 'linear-gradient']
-            }, {
-                dir: 'diagonal-stripes',
-                thumb: 'diagonal-stripes.png',
-                title: '斜向条纹背景',
-                tags: ['background-size', 'linear-gradient']
-            }, {
-                dir: 'diagonal-stripes-60deg',
-                thumb: '../diagonal-stripes/diagonal-stripes.png',
-                title: '斜向条纹背景2 60度',
-                tags: ['background-size', 'repeating-linear-gradient']
-            }, {
-                dir: 'subtle-stripes',
-                thumb: 'subtle-stripes.png',
-                title: '灵活的同色系条纹',
-                tags: ['background-size', 'repeating-linear-gradient','hlsa','rgba']
-            }, {
-                dir: 'blueprint',
-                thumb: 'blueprint.png',
-                title: '复杂的背景图案-网格',
-                tags: ['background-size', 'linear-gradient', 'hlsa', 'rgba']
-            }, {
-                dir: 'polka',
-                thumb: 'polka.png',
-                title: '复杂的背景图案-波点',
-                tags: ['background-size', 'radial-gradient', 'hlsa', 'rgba']
-            }, {
-                dir: 'checkerboard',
-                thumb: 'checkerboard.png',
-                title: '复杂的背景图案-棋盘',
-                tags: ['background-size', 'linear-gradient', 'hlsa', 'rgba']
-            }, {
-                dir: 'checkerboard_svg',
-                thumb: '../checkerboard/checkerboard.png',
-                title: '复杂的背景图案-棋盘svg实现',
-                tags: ['background-size', 'svg']
-            }, {
-                dir: 'limegreen',
-                thumb: 'limegreen.png',
-                title: '复杂的背景图案-绿色草地',
-                tags: ['background', 'repeating-linear-gradient']
-            },{
-                dir: 'conicbg',
-                thumb: 'conic.png',
-                title: '复杂的背景图案-圆锥',
-                tags: ['background', 'repeating-linear-gradient']
-            },{
-                dir: 'pseudorandom-stripes',
-                thumb: 'pseudorandom-stripes.png',
-                title: '复杂的背景图案-伪随机',
-                tags: ['background', 'linear-gradient','hsl']
-            }, {
-                dir: 'continuous-image-borders',
-                thumb: 'continuous-image-borders.png',
-                title: '连续的图片边框',
-                tags: ['background', 'linear-gradient']
-            }, {
-                dir: 'border-image',
-                thumb: 'border-image.png',
-                title: '边框图片',
-                tags: ['border-image', 'svg']
-            }]
+        }, {
+            dir: 'inner-rounding',
+            thumb: 'inner-rounding.png',
+            title: '边框内圆角',
+            tags: ['outline', 'box-shadow']
+        }, {
+            dir: 'horizontal-stripes',
+            thumb: 'horizontal-stripes.png',
+            title: '水平条纹背景',
+            tags: ['background-size', 'linear-gradient']
+        }, {
+            dir: 'vetical-stripes',
+            thumb: 'vetical-stripes.png',
+            title: '垂直条纹背景',
+            tags: ['background-size', 'linear-gradient']
+        }, {
+            dir: 'diagonal-stripes',
+            thumb: 'diagonal-stripes.png',
+            title: '斜向条纹背景',
+            tags: ['background-size', 'linear-gradient']
+        }, {
+            dir: 'diagonal-stripes-60deg',
+            thumb: '../diagonal-stripes/diagonal-stripes.png',
+            title: '斜向条纹背景2 60度',
+            tags: ['background-size', 'repeating-linear-gradient']
+        }, {
+            dir: 'subtle-stripes',
+            thumb: 'subtle-stripes.png',
+            title: '灵活的同色系条纹',
+            tags: ['background-size', 'repeating-linear-gradient', 'hlsa', 'rgba']
+        }, {
+            dir: 'blueprint',
+            thumb: 'blueprint.png',
+            title: '复杂的背景图案-网格',
+            tags: ['background-size', 'linear-gradient', 'hlsa', 'rgba']
+        }, {
+            dir: 'polka',
+            thumb: 'polka.png',
+            title: '复杂的背景图案-波点',
+            tags: ['background-size', 'radial-gradient', 'hlsa', 'rgba']
+        }, {
+            dir: 'checkerboard',
+            thumb: 'checkerboard.png',
+            title: '复杂的背景图案-棋盘',
+            tags: ['background-size', 'linear-gradient', 'hlsa', 'rgba']
+        }, {
+            dir: 'checkerboard_svg',
+            thumb: '../checkerboard/checkerboard.png',
+            title: '复杂的背景图案-棋盘svg实现',
+            tags: ['background-size', 'svg']
+        }, {
+            dir: 'limegreen',
+            thumb: 'limegreen.png',
+            title: '复杂的背景图案-绿色草地',
+            tags: ['background', 'repeating-linear-gradient']
+        }, {
+            dir: 'conicbg',
+            thumb: 'conic.png',
+            title: '复杂的背景图案-圆锥',
+            tags: ['background', 'repeating-linear-gradient']
+        }, {
+            dir: 'pseudorandom-stripes',
+            thumb: 'pseudorandom-stripes.png',
+            title: '复杂的背景图案-伪随机',
+            tags: ['background', 'linear-gradient', 'hsl']
+        }, {
+            dir: 'continuous-image-borders',
+            thumb: 'continuous-image-borders.png',
+            title: '连续的图片边框',
+            tags: ['background', 'linear-gradient']
+        }, {
+            dir: 'border-image',
+            thumb: 'border-image.png',
+            title: '边框图片',
+            tags: ['border-image', 'svg']
+        }]
     },
     methods: {
         setPages() {
@@ -151,7 +187,7 @@ var app = new Vue({
             return this.paginate(this.demos);
         }
     },
-    created(){
+    created() {
         this.setPages()
     }
 })

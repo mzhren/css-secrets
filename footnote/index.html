@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>脚注效果</title>
+    <meta link="http://dabblet.com/gist/9483cc7012049f2c808e">
+    <style>
+    /**
+    * Footnote-style border
+    */
+
+    .footnote {
+        border: .15em solid transparent;
+        border-image: 100% 0 0 linear-gradient(90deg, currentColor 4em, transparent 0);
+        padding-top: .5em;
+        font: 220%/1.4 Baskerville, Palatino, serif;
+    }
+    p{
+        margin: 0;
+    }
+    </style>
+</head>
+<body>
+    <div class="footnote">
+        <p>
+            <sup>1</sup> 这是一个脚注.
+        </p>
+        <p>
+            <sup>2</sup> 这也是一个脚注.
+        </p>
+    </div>
+</body>
+</html>
